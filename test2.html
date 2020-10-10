@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <div id="i2">欢迎马老师到来，观察做出指导。</div>
+    <input id="i1" style="width: 80px;" value="欢迎马老师到来，观察做出指导。">
+    <script type="application/javascript">
+        content = document.getElementById("i1").getAttribute("value")
+        setInterval("gun()", 1000)
+        var i = 0
+
+        function gun() {
+            document.getElementById("i1").setAttribute("value", content.substring(i, i + 6))
+            i++
+            if (i == content.length - 6) {
+                i = 0
+            }
+        }
+    </script>
+    <script>
+        setInterval("gun2()", 500);
+
+        function gun2() {
+            var tag = document.getElementById('i2');
+            var content = tag.innerText;
+            f = content.charAt(0);
+            l = content.substring(1, content.length);
+            new_content = l + f;
+            tag.innerText = new_content;
+        }
+    </script>
+
+</body>
+
+</html>
